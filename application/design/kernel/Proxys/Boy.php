@@ -6,7 +6,7 @@
  * Time: 9:45
  */
 
-namespace Proxys;
+namespace app\design\kernel\Proxys;
 
 
 use think\Exception;

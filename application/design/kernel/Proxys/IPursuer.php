@@ -7,7 +7,7 @@
  * Time: 9:43
  */
 
-namespace Proxys;
+namespace app\design\kernel\Proxys;
 
 interface IPursuer
 {

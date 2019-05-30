@@ -1,6 +1,6 @@
 <?php
 
-namespace Decorator;
+namespace app\design\kernel\Decorator;
 
 abstract class Component
 {

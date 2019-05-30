@@ -6,7 +6,7 @@
  * Time: 10:01
  */
 
-namespace Proxys;
+namespace app\design\kernel\Proxys;
 
 
 class Proxy implements IPursuer

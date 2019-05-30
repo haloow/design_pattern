@@ -6,8 +6,7 @@
  * Time: 15:29
  */
 
-namespace Factory;
-
+namespace app\design\kernel\Factory;
 
 abstract class Product
 {

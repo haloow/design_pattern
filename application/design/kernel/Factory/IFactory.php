@@ -6,7 +6,7 @@
  * Time: 15:28
  */
 
-namespace Factory;
+namespace app\design\kernel\Factory;
 
 
 interface IFactory

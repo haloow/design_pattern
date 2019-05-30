@@ -6,7 +6,7 @@
  * Time: 9:46
  */
 
-namespace Proxys;
+namespace app\design\kernel\Proxys;
 
 
 class Girl

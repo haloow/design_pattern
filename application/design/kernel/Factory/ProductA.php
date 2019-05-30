@@ -3,16 +3,16 @@
  * Created by PhpStorm.
  * User: zof
  * Date: 2019/5/28
- * Time: 15:32
+ * Time: 15:30
  */
 
-namespace Factory;
+namespace app\design\kernel\Factory;
 
 
-class ProductB extends Product
+class ProductA extends Product
 {
     public function getVersion()
     {
-        echo "I'm ProductB<br/>";
+        echo "I'm ProductA<br/>";
     }
 }

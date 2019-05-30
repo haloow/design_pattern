@@ -6,7 +6,7 @@
  * Time: 16:24
  */
 
-namespace Prototype;
+namespace app\design\kernel\Prototype;
 
 
 interface Prototype

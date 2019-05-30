@@ -7,23 +7,25 @@
  * Time: 18:38
  */
 namespace app\design\controller;
-use \Decorator\ConcreteComponent;
-use \Decorator\ConcreteDecoratorA;
-use \Decorator\ConcreteDecoratorB;
 
-use Factory\FactoryA;
-use Factory\FactoryB;
-use Prototype\Resume;
-use Proxys\Boy;
-use Proxys\Girl;
-use Proxys\Proxy;
+use app\design\kernel\Decorator\ConcreteComponent;
+use app\design\kernel\Decorator\ConcreteDecoratorA;
+use app\design\kernel\Decorator\ConcreteDecoratorB;
+
+use app\design\kernel\Factory\FactoryA;
+use app\design\kernel\Factory\FactoryB;
+use app\design\kernel\Prototype\Resume;
+use app\design\kernel\Proxys\Boy;
+use app\design\kernel\Proxys\Girl;
+use app\design\kernel\Proxys\Proxy;
+
 use think\Controller;
 
 class DesignDriver extends Controller
 {
     public function index()
     {
-        echo "index";
+        echo "design pattern exercise";
     }
 
     public function decorator()

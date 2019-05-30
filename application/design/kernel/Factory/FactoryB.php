@@ -6,7 +6,7 @@
  * Time: 15:34
  */
 
-namespace Factory;
+namespace app\design\kernel\Factory;
 
 
 class FactoryB implements IFactory

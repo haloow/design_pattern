@@ -6,7 +6,7 @@
  * Time: 16:26
  */
 
-namespace Prototype;
+namespace app\design\kernel\Prototype;
 
 
 class Experience implements Prototype
