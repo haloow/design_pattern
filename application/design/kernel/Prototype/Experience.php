@@ -24,7 +24,7 @@ class Experience implements Prototype
         $this->workDate = $workDate;
     }
 
-    public function getCompany()
+    public function getCompany():string
     {
         return $this->company;
     }
