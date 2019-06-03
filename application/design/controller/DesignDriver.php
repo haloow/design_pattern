@@ -19,6 +19,8 @@ use app\design\kernel\Proxys\Boy;
 use app\design\kernel\Proxys\Girl;
 use app\design\kernel\Proxys\Proxy;
 
+use app\design\kernel\Template\TemplateSubA;
+use app\design\kernel\Template\TemplateSubB;
 use think\Controller;
 
 class DesignDriver extends Controller
@@ -77,5 +79,14 @@ class DesignDriver extends Controller
         $a->disPlay();
         $b->disPlay();
         $c->disPlay();
+    }
+
+    public function templateMethod()
+    {
+        $a = new TemplateSubA();
+        $a->templateMethod();
+
+        $b = new TemplateSubB();
+        $b->templateMethod();
     }
 }
