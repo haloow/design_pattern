@@ -12,6 +12,7 @@ use app\design\kernel\Decorator\ConcreteComponent;
 use app\design\kernel\Decorator\ConcreteDecoratorA;
 use app\design\kernel\Decorator\ConcreteDecoratorB;
 
+use app\design\kernel\Facade\Facade;
 use app\design\kernel\Factory\FactoryA;
 use app\design\kernel\Factory\FactoryB;
 use app\design\kernel\Prototype\Resume;
@@ -88,5 +89,11 @@ class DesignDriver extends Controller
 
         $b = new TemplateSubB();
         $b->templateMethod();
+    }
+
+    public function facade()
+    {
+        $facade = new Facade();
+        $facade->methodOne();
     }
 }
