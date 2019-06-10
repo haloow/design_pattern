@@ -20,6 +20,7 @@ use app\design\kernel\Proxys\Boy;
 use app\design\kernel\Proxys\Girl;
 use app\design\kernel\Proxys\Proxy;
 
+use app\design\kernel\SimpleFactory\SimpleFactory;
 use app\design\kernel\Template\TemplateSubA;
 use app\design\kernel\Template\TemplateSubB;
 use think\Controller;
@@ -95,5 +96,13 @@ class DesignDriver extends Controller
     {
         $facade = new Facade();
         $facade->methodOne();
+    }
+
+    public function simpleFactory()
+    {
+        $oper = SimpleFactory::createOperation('-');
+        $oper->numA = 10;
+        $oper->numB = 2;
+        printf($oper->getResult());
     }
 }
