@@ -23,6 +23,7 @@ use app\design\kernel\Proxys\Proxy;
 use app\design\kernel\SimpleFactory\SimpleFactory;
 use app\design\kernel\Template\TemplateSubA;
 use app\design\kernel\Template\TemplateSubB;
+use app\design\kernel\Strategy\Context;
 use think\Controller;
 
 class DesignDriver extends Controller
@@ -104,5 +105,15 @@ class DesignDriver extends Controller
         $oper->numA = 10;
         $oper->numB = 2;
         printf($oper->getResult());
+    }
+
+    public function strategy()
+    {
+        $context = new Context('A');
+        echo $context->execStrategy().'<br/>';
+        $context = new Context('B');
+        echo $context->execStrategy().'<br/>';
+        $context = new Context('C');
+        echo $context->execStrategy().'<br/>';
     }
 }
