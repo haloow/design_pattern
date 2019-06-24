@@ -8,6 +8,9 @@
  */
 namespace app\design\controller;
 
+use app\design\kernel\Builder\FatBuilder;
+use app\design\kernel\Builder\PersonDirector;
+use app\design\kernel\Builder\ThinBuilder;
 use app\design\kernel\Decorator\ConcreteComponent;
 use app\design\kernel\Decorator\ConcreteDecoratorA;
 use app\design\kernel\Decorator\ConcreteDecoratorB;
@@ -115,5 +118,14 @@ class DesignDriver extends Controller
         echo $context->execStrategy().'<br/>';
         $context = new Context('C');
         echo $context->execStrategy().'<br/>';
+    }
+
+    public function builder()
+    {
+        $director = new PersonDirector(new ThinBuilder());
+        $director->createPerson();
+
+        $director = new PersonDirector(new FatBuilder());
+        $director->createPerson();
     }
 }
