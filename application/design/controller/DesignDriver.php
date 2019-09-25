@@ -28,6 +28,7 @@ use app\design\kernel\Proxys\Girl;
 use app\design\kernel\Proxys\Proxy;
 
 use app\design\kernel\SimpleFactory\SimpleFactory;
+use app\design\kernel\State\Work;
 use app\design\kernel\Template\TemplateSubA;
 use app\design\kernel\Template\TemplateSubB;
 use app\design\kernel\Strategy\Context;
@@ -165,5 +166,12 @@ class DesignDriver extends Controller
         echo $keyBoard->getInfo().'<br>';
         echo $mouse->getInfo().'<br>';
         echo $mic->getInfo();
+    }
+
+    public function state()
+    {
+        $work = new Work();
+        $work->setHour(16);
+        echo $work->writeProgram();
     }
 }
