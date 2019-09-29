@@ -13,6 +13,8 @@ use app\design\kernel\AbstractFactory\HpFactory;
 use app\design\kernel\Builder\FatBuilder;
 use app\design\kernel\Builder\PersonDirector;
 use app\design\kernel\Builder\ThinBuilder;
+use app\design\kernel\Memo\Originator;
+use app\design\kernel\Memo\Taker;
 use app\design\kernel\Observer\Colleague;
 use app\design\kernel\Decorator\ConcreteComponent;
 use app\design\kernel\Decorator\ConcreteDecoratorA;
@@ -173,5 +175,21 @@ class DesignDriver extends Controller
         $work = new Work();
         $work->setHour(16);
         echo $work->writeProgram();
+    }
+
+    public function memo()
+    {
+        $originator = new Originator();
+        $originator->setState("on");
+        $originator->show();
+
+        $taker = new Taker();
+        $taker->setMemo($originator->createMemo());
+
+        $originator->setState("off");
+        $originator->show();
+
+        $originator->recovery($taker->getMemo());
+        $originator->show();
     }
 }
