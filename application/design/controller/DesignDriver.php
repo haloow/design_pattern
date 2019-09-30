@@ -13,6 +13,8 @@ use app\design\kernel\AbstractFactory\HpFactory;
 use app\design\kernel\Builder\FatBuilder;
 use app\design\kernel\Builder\PersonDirector;
 use app\design\kernel\Builder\ThinBuilder;
+use app\design\kernel\Component\Composite;
+use app\design\kernel\Component\Leaf;
 use app\design\kernel\Memo\Originator;
 use app\design\kernel\Memo\Taker;
 use app\design\kernel\Observer\Colleague;
@@ -191,5 +193,31 @@ class DesignDriver extends Controller
 
         $originator->recovery($taker->getMemo());
         $originator->show();
+    }
+
+    public function component()
+    {
+        $root = new Composite("root");
+        $root->add(new Leaf("Leaf A"));
+        $root->add(new Leaf("Leaf B"));
+
+        $com = new Composite("Composite X");
+        $com->add(new Leaf("Leaf XA"));
+        $com->add(new Leaf("Leaf XB"));
+
+        $root->add($com);
+
+        $com2 = new Composite("Composite XY");
+        $com2->add(new Leaf("Leaf XYA"));
+        $com2->add(new Leaf("Leaf XYB"));
+
+        $com->add($com2);
+
+        $root->add(new Leaf("Leaf C"));
+        $root->add(($d = new Leaf("Leaf D")));
+        $root->display(2);
+        echo "<br/><br/>";
+        $root->remove($d);
+        $root->display(2);
     }
 }
