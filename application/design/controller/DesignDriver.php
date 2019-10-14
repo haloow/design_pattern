@@ -10,6 +10,9 @@ namespace app\design\controller;
 
 use app\design\kernel\AbstractFactory\DellFactory;
 use app\design\kernel\AbstractFactory\HpFactory;
+use app\design\kernel\Bridge\Kupao;
+use app\design\kernel\Bridge\SonyBrand;
+use app\design\kernel\Bridge\Wechat;
 use app\design\kernel\Builder\FatBuilder;
 use app\design\kernel\Builder\PersonDirector;
 use app\design\kernel\Builder\ThinBuilder;
@@ -219,5 +222,20 @@ class DesignDriver extends Controller
         echo "<br/><br/>";
         $root->remove($d);
         $root->display(2);
+    }
+
+    public function bridge()
+    {
+        $brand = new SonyBrand();
+        $brand->addSoftware(new Kupao());
+        $brand->run();
+
+        echo "<br/>";
+        $brand->addSoftware(new Wechat());
+        $brand->run();
+
+        echo "<br/>";
+        $brand->removeSoftware(new Kupao());
+        $brand->run();
     }
 }
